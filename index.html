@@ -1,1 +1,658 @@
-<p>hhahp</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>六爻排盘</title>
+<meta name="keywords" content="六爻排盘,六爻起卦,六爻摇卦,在线六爻排盘,六爻占卜,六爻算命,六爻在线起卦">
+<meta name="description" content="在线六爻排盘系统,六爻排盘,六爻起卦,六爻摇卦,纳甲六爻,在线起卦,六爻排卦,六爻算卦">
+    <link rel="shortcut icon" href="/templates/default/images/icon_bbs.png?20231128" type="image/x-icon" />
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/css/style.css?20231128"/>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/css/zhouyi.css?20231128"/>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/css/footer.css?20231128"/>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/css/header.css?20231128"/>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/message/css/msgBox.css?20231128"/>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/reward/css/show-reward.css?20231128"></link>
+    <link rel="stylesheet" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/reward/css/reward.css?20231128"></link>
+    <script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/js/jquery.min.js?20231128"></script>
+    <script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/js/zhouyi.js?20231128"></script>
+    <script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/message/js/msgBox.js?20231128"></script>
+    <script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/js/common.js?20231128"></script>
+    <script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/public/js/util/util.js?20231128"></script>
+</head>
+<body>
+<div style="width: 100%">
+    <div style="border-bottom: 1px solid darkgrey;"></div>
+    <div style="background-color:#FAF7E6;padding-top:20px;padding-bottom:40px">
+        <div style="margin:0 auto;width: 73%">
+            <div class="nav-bread" style="display: flex;flex-direction: row;">
+        <p style="color: #9C561E">在线六爻排盘</p>
+            </div>
+            <div class="input_div" style="background-color:#FFFFFF">
+<script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/js/input.js?20231128" ></script>
+<link rel="stylesheet" type="text/css" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/css/input.css?20231128"/>
+<script type="text/javascript" src="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/cal/laydate.js?20231128"></script>
+<link rel="stylesheet" type="text/css" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/cal/laydate_002.css?20231128"/>
+<link rel="stylesheet" type="text/css" href="/templates/v2/tpls/cloudzhouyi/tools/lypaipan/web/cal/laydate.css?20231128"/>
+<script type="text/javascript" src="/templates/v2/layui/layui.js?20231128"></script>
+			<div class="middle-container">
+	<h2 class="titleh2">六爻排盘</h2>
+	<div class="line"></div>
+        <div style="padding-left: 10px;padding-right: 10px;" class="middle-container-left">
+            <div class="main-content">
+                <div class="paipan-input ly-input">
+                	<h4 class="current-paipan-type"></h4>
+					<form class="paipan-input-form" id="ly-input-form" method="post" name="form1">
+                        <div class="group-inputs" style="display: flex;flex-direction: column">
+							<div>
+								<span class="span1">占事标题：</span>
+								<input id="description" class="description-input" maxlength="45" type="text" value="占事标题" name="description"
+									   onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '占事标题')"/>
+							</div>
+                            <div>
+								<span class="span1">卦主姓名：</span>
+								<div>
+									<div class="person-name">
+										<input id="nameInput" class="person-name-input" maxlength="10" type="text" value="请输入您的姓名" name="personName"
+										onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '请输入您的姓名')"/>
+									</div>
+									<span class="span1">性别：</span>
+									<div class="genderinput">
+										<select id="genderSelect" class="gender-select" name="gender">
+											<option class="element-hidden" value="3">忽略</option>
+											<option value="1">男</option>
+											<option value="2">女</option>
+										</select>
+									</div>
+<div class="zhanshi-type">
+	<span class="span1">占事大类：</span>
+	<div class="type1-input">
+		<select class="type1-select" id="type1-select" name="type1"></select>
+	</div>
+	<span class="span1">占事小类：</span>
+	<div class="type2-input">
+		<select class="type2-select" id="type2-select" name="type2"></select>
+	</div>
+	<script type="text/javascript">
+		var type = {" 0":[{"id":"0","name":"--忽略--","sort":"1"},[{"type1id":"0","id":"0","name":"忽略","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"}]]," 2":[{"id":"2","name":"感情/婚姻(男)","sort":"3"},[{"type1id":"2","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"2","id":"1","name":"感情发展（恋人）","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"2","id":"208","name":"感情发展（非恋人）","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"2","id":"2","name":"已婚感情/婚姻","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"2","id":"4","name":"何时有感情/未来正缘","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"2","id":"205","name":"感情复合/婚姻复合","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"2","id":"3","name":"桃花运/情人","sort":"7","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"2","id":"25","name":"对方外遇/小三","sort":"8","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"2","id":"207","name":" 能否分手/离婚","sort":"9","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"2","id":"209","name":"她与前任","sort":"10","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"2","id":"206","name":"其他情况","sort":"11","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 3":[{"id":"3","name":"感情/婚姻(女)","sort":"4"},[{"type1id":"3","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"3","id":"1","name":"感情发展（恋人）","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"3","id":"308","name":"感情发展（非恋人）","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"3","id":"2","name":"已婚感情/婚姻","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"3","id":"4","name":"何时有感情/未来正缘","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"3","id":"305","name":"感情复合/婚姻复合","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"3","id":"3","name":"桃花运/情人","sort":"7","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"3","id":"35","name":"对方外遇/小三","sort":"8","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"3","id":"306","name":"能否分手/离婚","sort":"9","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"3","id":"309","name":"他与前任","sort":"10","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"3","id":"307","name":"其他情况","sort":"11","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 4":[{"id":"4","name":"财运/生意","sort":"5"},[{"type1id":"4","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"4","id":"44","name":"财运预测","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"4","name":"生意投资","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"42","name":"开店求财","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"43","name":"短期求财","sort":"5","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"47","name":"借款贷款","sort":"6","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"48","name":"融资拿钱","sort":"7","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"49","name":"投标签约","sort":"8","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"491","name":"催债收款","sort":"9","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"46","name":"财运还款","sort":"10","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"4","id":"45","name":"麻将打牌财运","sort":"11","timeUnit":"3","titleExpr":"#name #sex #type2(#gua)"},{"type1id":"4","id":"492","name":"投机博财","sort":"13","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"4","id":"494","name":"资产交易求财","sort":"14","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 1":[{"id":"1","name":"事业官运","sort":"6"},[{"type1id":"1","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"101","name":"事业发展","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"102","name":"官运升职","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"103","name":"工作调动","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"104","name":"候补填职","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"105","name":"改换工作","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"1","id":"107","name":"求名出名","sort":"7","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"108","name":"单位前景","sort":"8","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"1","id":"106","name":"是否辞职/辞职成功","sort":"9","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"1","id":"109","name":"其他情况","sort":"10","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 15":[{"id":"15","name":"求职应聘","sort":"7"},[{"type1id":"15","id":"-1","name":"通用","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1"},{"type1id":"15","id":"151","name":"应聘能否成功","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"15","id":"152","name":"何时能找到工作","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"15","id":"153","name":"求职单位情况","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"15","id":"154","name":" 入职未来发展","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 6":[{"id":"6","name":"学业/考试","sort":"8"},[{"type1id":"6","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"6","id":"601","name":"考试考学","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"6","id":"602","name":"学业学习","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"6","id":"603","name":"公务员考试","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"6","id":"605","name":"艺术考试","sort":"5","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"6","id":"607","name":"代占子女学业考试","sort":"6","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"6","id":"608","name":"代占子女艺术考试","sort":"7","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"6","id":"609","name":"转学转校","sort":"8","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 9":[{"id":"9","name":"终身运/年运","sort":"9"},[{"type1id":"9","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"9","id":"901","name":"终身运(男)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"9","id":"902","name":"终身运(女)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"9","id":"903","name":"年运(男)/几月运","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"9","id":"904","name":"年运(女)/几月运","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type2"}]]," 10":[{"id":"10","name":"周运势/短期运","sort":"10"},[{"type1id":"10","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"10","id":"265","name":"周运(男)","sort":"0","timeUnit":"2","titleExpr":"#name 男 占一周运势"},{"type1id":"10","id":"266","name":"周运(女)","sort":"0","timeUnit":"2","titleExpr":"#name 女 占一周运势"},{"type1id":"10","id":"261","name":"每日运(通用)","sort":"0","timeUnit":"3","titleExpr":"#name #sex #type2"},{"type1id":"10","id":"267","name":"每日运(男)","sort":"0","timeUnit":"3","titleExpr":"#name #sex #type2"},{"type1id":"10","id":"268","name":"每日运(女)","sort":"0","timeUnit":"3","titleExpr":"#name #sex #type2"}]]," 5":[{"id":"5","name":"怀孕/子女缘","sort":"11"},[{"type1id":"5","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"5","id":"51","name":"是否怀孕/何时能怀孕","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"5","id":"54","name":"胎孕平安/生产","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"5","id":"52","name":"妻子是否怀孕/妻子何时能怀孕","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"5","id":"56","name":"妻子胎孕平安/生产","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type2"},{"type1id":"5","id":"507","name":"未来子女情况","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 7":[{"id":"7","name":"疾病/医药","sort":"12"},[{"type1id":"7","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"7","id":"701","name":"占本人自己","sort":"2","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"702","name":"占父母长辈","sort":"3","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"703","name":"占妻子女友","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"704","name":"占丈夫男友","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"705","name":"占孩子侄孙晚辈","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"706","name":"占兄弟姐妹好友","sort":"7","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"707","name":"占其他一般人","sort":"8","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"7","id":"708","name":"占药物或疗效","sort":"9","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 11":[{"id":"11","name":"官司诉讼","sort":"13"},[{"type1id":"11","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"11","id":"1101","name":"是否刑罚/刑罚程度","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"11","id":"1102","name":"何时释放","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 12":[{"id":"12","name":"出行平安","sort":"14"},[{"type1id":"12","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"12","id":"121","name":"平安顺利","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2(#gua)"},{"type1id":"12","id":"122","name":"能否出行","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 13":[{"id":"13","name":"找寻失物","sort":"15"},[{"type1id":"13","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"13","id":"131","name":"财物丢失","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1"},{"type1id":"13","id":"132","name":"宠物丢失","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1"},{"type1id":"13","id":"133","name":"证件文书钥匙","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1"}]]," 16":[{"id":"16","name":"行人归来","sort":"16"},[{"type1id":"16","id":"-1","name":"通用","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1(#gua)"}]]," 17":[{"id":"17","name":"消息联络","sort":"17"},[{"type1id":"17","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"17","id":"171","name":"何时会来消息或联络我","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type2(#gua)"}]]," 18":[{"id":"18","name":"家宅风水","sort":"18"},[{"type1id":"18","id":"-1","name":"通用","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"18","id":"801","name":"家居风水/搬家","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"18","id":"802","name":"办公室风水","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"18","id":"803","name":"工厂风水","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"18","id":"804","name":"店铺风水","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"18","id":"805","name":"阴宅墓地","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 25":[{"id":"25","name":"号码预测","sort":"20"},[{"type1id":"25","id":"-1","name":"通用","sort":"1","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"25","id":"251","name":"手机号(男)","sort":"2","timeUnit":"0","titleExpr":"#name 男 测手机号码运势"},{"type1id":"25","id":"252","name":"手机号(女)","sort":"3","timeUnit":"0","titleExpr":"#name 女 测手机号码运势"},{"type1id":"25","id":"254","name":"男身份证号","sort":"4","timeUnit":"0","titleExpr":"#name #sex #type #type"},{"type1id":"25","id":"256","name":"女身份证号","sort":"5","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"25","id":"253","name":"车牌号","sort":"6","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"},{"type1id":"25","id":"255","name":"其他号码","sort":"7","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 14":[{"id":"14","name":"比赛/概率","sort":"21"},[{"type1id":"14","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"14","id":"141","name":"比赛/赛事","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"14","id":"145","name":"概率/数字","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"}]]," 27":[{"id":"27","name":"姓名","sort":"22"},[{"type1id":"27","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"27","id":"271","name":"姓名(男)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"},{"type1id":"27","id":"272","name":"姓名(女)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"}]]," 8":[{"id":"8","name":"天气","sort":"23"},[{"type1id":"8","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1"}]]," 28":[{"id":"28","name":"杂占/其它","sort":"24"},[{"type1id":"28","id":"-1","name":"通用","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type1"},{"type1id":"28","id":"281","name":"占梦解梦","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"282","name":"其它杂事","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"283","name":"占灾祸忧虑平安","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"284","name":"买房/何时买房","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"285","name":"买车/得车","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"286","name":"人际关系","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"287","name":"他人状况","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"288","name":"招聘雇员","sort":"0","timeUnit":"1","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"289","name":"证书/证明办理","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"2810","name":"房屋出租","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"2811","name":"房屋租用","sort":"0","timeUnit":"2","titleExpr":"#name #sex #type2"},{"type1id":"28","id":"2812","name":"各类代测","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1 #type2"}]]," 1000":[{"id":"1000","name":"四柱八字","sort":"25"},[{"type1id":"1000","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"1000","id":"1001","name":"四柱八字(男)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"1000","id":"1002","name":"四柱八字(女)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"}]]," 2000":[{"id":"2000","name":"紫薇斗数","sort":"26"},[{"type1id":"2000","id":"-1","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"2000","id":"2001","name":"紫薇斗数(男)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"},{"type1id":"2000","id":"2002","name":"紫薇斗数(女)","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"}]]," 10000":[{"id":"10000","name":"六爻搜索","sort":"27"},[{"type1id":"10000","id":"10000","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"}]]," 20000":[{"id":"20000","name":"八字搜索","sort":"28"},[{"type1id":"20000","id":"20000","name":"通用","sort":"0","timeUnit":"0","titleExpr":"#name #sex #type1(#gua)"}]]," 3000":[{"id":"3000","name":"周公解梦","sort":"29"},[{"type1id":"3000","id":"3001","name":"周公解梦","sort":"30","timeUnit":"0","titleExpr":""}]]," 20001":[{"id":"20001","name":"手面相/户型图","sort":"29"},[{"type1id":"20001","id":"20001","name":"手相(男)","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20002","name":"手相(女)","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20003","name":"面相(男)","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20004","name":"面相(女)","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20005","name":"宠物面相（雄）","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20006","name":"宠物面相（雌）","sort":"29","timeUnit":"0","titleExpr":""},{"type1id":"20001","id":"20007","name":"户型图","sort":"29","timeUnit":"0","titleExpr":""}]]};
+		var select1Id = "type1-select";
+		var select2Id = "type2-select";
+		selectZhanshiType(type, select1Id, select2Id);
+	</script>
+ </div>
+
+								</div>
+							</div>
+
+                            <div class="second-line">
+                                <span class="span2">起卦时间：</span>
+                                <div  class="qiguatimediv" >
+                                    <input id="qiguatime" class="laydate-icon" style="background-size:15px;padding-right:5px" type="text" name="qiguaTime" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm'})"/>
+                                    <script>getCurrentTime();</script>
+                                </div>
+                            </div>
+                            <div class="third-line">
+                                <span class="span2">起卦方式：</span>
+                                <div class="lyqigua-type-select">
+                                    <span  class="lyqigua-type option-1">手工指定</span>
+                                    <span  class="lyqigua-type option-2">在线摇卦</span>
+                                    <span  class="lyqigua-type option-3">单数起卦</span>
+                                    <span  class="lyqigua-type option-4">双数起卦</span>
+                                    <span  class="lyqigua-type option-5">时间起卦</span>
+                                    <span  class="lyqigua-type option-6">电脑自动</span>
+									<span  class="lyqigua-type option-7">汉字起卦</span>
+									<span  class="lyqigua-type option-8">卦名起卦</span>
+                                </div>
+								<br>
+                                <div class="lyqigua-item">
+                                    <script class="lyqigua-template-1" type="text/template">
+                                        <div class="lyqigua-item-1 manual-qigua">
+											<input type="hidden" name="liuyaoQiguaType" value="1" />
+											<input type="hidden" name="singularQigua" value="1"/>
+											<div align="center">
+												<font class="mannual-prompt">
+												<b style="font-size: 14px;color: black">请在下表指定每一爻的阴阳属性.也可以用铜钱在线下摇卦
+
+
+												,将每次摇卦结果填在下面.</b>
+												</font>
+											<table width="400" border="1" align="center"  cellpadding="3" cellspacing="1" bordercolorlight="#000000" bordercolordark="#ffffff"
+											class="mannual-tbl" name="appointTable">
+												<tbody>
+
+											<tr>
+												  <td width="50%" height="40" align="center">
+													第六爻
+
+												  </td>
+												  <td height="40" align="middle">
+													  <select id="sY6" class="tbselect" size="1" name="Y6">
+														  <option style="display:none" disabled selected>请选择</option>
+														<option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+														<option value="2">老阴─　─ Ｘ</option>
+														<option value="3">老阳─── ○</option>
+													  </select>
+												  </td>
+											</tr>
+
+											<tr>
+												  <td height="40" align="center">第五爻</td>
+												  <td height="40" align="middle"><select id="sY5"  class="tbselect" size="1" name="Y5">
+													  <option style="display:none" disabled selected>请选择</option>
+													  <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td>
+											</tr>
+
+											<tr>
+												  <td height="40" align="center">第四爻</td>
+												  <td height="40" align="middle"><select id="sY4" class="tbselect" size="1" name="Y4">
+													  <option style="display:none" disabled selected>请选择</option><option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td>
+											</tr>
+
+											<tr>
+												  <td height="40" align="center">第三爻</td>
+												  <td height="40" align="middle"><select id="sY3" class="tbselect" size="1" name="Y3">
+													  <option style="display:none" disabled selected>请选择</option>
+													  <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td>
+											</tr>
+
+																						<tr>
+												  <td height="40" align="center">第二爻</td>
+												  <td height="40" align="middle"><select id="sY2" class="tbselect" size="1" name="Y2">
+													  <option style="display:none" disabled selected>请选择</option><option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td>
+											</tr>
+
+											<tr>
+												  <td height="40" align="center">第一爻</td>
+												  <td height="40" align="middle">
+													<select id="sY1" class="tbselect" size="1" name="Y1">
+														<option style="display:none" disabled selected>请选择</option>
+														<option value="0">少阴 ─　─</option>
+														<option value="1">少阳 ───</option>
+													    <option value="2">老阴─　─ Ｘ</option>
+													    <option value="3">老阳─── ○</option>
+													</select>
+													<input type="hidden" name="nongligan">
+													<input type="hidden" name="nongzhi">
+													<input type="hidden" name="nongmonth">
+													<input type="hidden" name="nongday">
+													<input type="hidden" name="isLeap">
+												   </td>
+											</tr>
+											</tbody></table>
+											</div>
+										<div>
+                                    </script>
+                                    <script class="lyqigua-template-2" type="text/template">
+                                        <div style="margin-top: 20px" class="lyqigua-item-2 appointed-qigua">
+											<input type="hidden" name="liuyaoQiguaType" value="2" />
+											<input type="hidden" name="singularQigua" value="2"/>
+											<div align="center" style="margin-bottom: 30px">
+											    <span class="yao_tip">点击钱币待开始旋转后，再次点击可求得一爻，反复六次</span>
+											</div>
+											<div align="center" onclick="yaogua(1)" style="cursor: pointer">
+											<img name="q1" border="0" src="/templates/v2/tpls/cloudzhouyi/paipan/ly/images/ly.gif">　　 
+											<img name="q2" border="0" src="/templates/v2/tpls/cloudzhouyi/paipan/ly/images/ly.gif">　　 
+											<img name="q3" border="0" src="/templates/v2/tpls/cloudzhouyi/paipan/ly/images/ly.gif"></div>
+											<div id="ly_online" align="center" style="margin-top:10px;"><input onclick="yaogua(1)" type="button" value="第一次" name="b1" style="border: 1px solid #ccc;font-size:15px;display:none">
+												 <input onclick="yaogua(0)" type="button" value="确 定" name="b2" style="display:none"></div><br>
+											<div align="center">	 
+											<table  width="400" border="1" align="center" cellpadding="3" cellspacing="1" bordercolorlight="#000000" bordercolordark="#ffffff" >
+												<tbody>
+												<tr>
+												  <td width="50%" height="40" align="center">
+													第六爻</td>
+													<td height="40" align="middle"><select id="zY6" class="tbselect2" size="1" name="Y6"><option style="display:none" selected>待摇卦</option> <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2" >老阴─　─
+													Ｘ</option> <option value="3">老阳─── ○</option></select></td>
+												</tr>
+												
+												<tr>
+												  <td height="40" align="center">第五爻</td>
+												  <td height="40" align="middle"><select id="zY5"   class="tbselect2" size="1" name="Y5">
+													  <option style="display:none" selected>待摇卦</option>
+													  <option value="0">少阴 ─　─</option>
+													  <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─ 
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td></tr>
+												
+												<tr>
+												  <td height="40" align="center">第四爻</td>
+												  <td height="40" align="middle"><select id="zY4" class="tbselect2" size="1" name="Y4"><option style="display:none" selected>待摇卦</option> <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─ 
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td></tr>
+												
+												<tr>
+												  <td height="40" align="center">第三爻</td>
+												  <td height="40" align="middle"><select id="zY3" class="tbselect2" size="1" name="Y3">
+													  <option style="display:none"  selected>待摇卦</option>
+													  <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─ 
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td></tr>
+												
+												<tr>
+												  <td height="40" align="center">第二爻</td>
+												  <td height="40" align="middle"><select id="zY2"class="tbselect2" size="1" name="Y2">
+													  <option style="display:none" selected>待摇卦</option>
+													  <option value="0">少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─ 
+													Ｘ</option> <option value="3">老阳─── ○</option></select> </td>
+												</tr>
+												
+												<tr>
+												  <td height="40" align="center">第一爻</td>
+												  <td height="40" align="middle"><select id="zY1" class="tbselect2" size="1" name="Y1">
+													  <option style="display:none" selected>待摇卦</option>
+													  <option value="0" >少阴 ─　─</option> <option value="1">少阳 ───</option>
+													  <option value="2">老阴─　─ 
+													Ｘ</option> <option value="3">老阳─── ○</option></select><input type="hidden" name="nongligan">
+													<input type="hidden" name="nongzhi">
+													<input type="hidden" name="nongmonth">
+													<input type="hidden" name="nongday">
+													<input type="hidden" name="isLeap"> </td>
+												</tr>
+	  
+											</tbody></table>
+											</div>
+										</div>
+                                    </script>
+                                    <script class="lyqigua-template-3" type="text/template">
+                                        <div class="lyqiguaqwe">
+											<input type="hidden" name="liuyaoQiguaType" value="3" />
+                                            <div>
+                                                <input id="danshu"; class="danshuInput" type="text" value="请输入一个数字" name="singularQigua"
+												onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '请输入一个数字')" />
+                                            </div>
+											<div align="center" style="margin-top:20px">
+												<p>起卦原理：</p>
+												<p>1.前半段数字之和÷8，余数取上卦；</p>
+												<p>2.后半段数字之和÷8，余数取下卦；</p>
+												<p>3.全数之和÷6，余数取动爻。</p>
+											</div>
+                                        </div>
+                                    </script>
+                                    <script class="lyqigua-template-4" type="text/template">
+                                        <div class="shuangshuDiv">
+											<input type="hidden" name="liuyaoQiguaType" value="4" />
+											<input type="hidden" name="singularQigua" value="4"/>
+											<span class="span3">上卦数:</span>
+											<div class="s">
+											<input id="shaungshu1" class="shuangshuInput"  type="text" value="请输入一个数字" name="evenQigua1"
+												onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '请输入一个数字')" maxlength="18"/>
+											</div>
+											<span class="span4">下卦数:</span>
+											<div class="shuangshuInputDiv">
+											<input id="shaungshu2" class="shuangshuInput" type="text" value="请输入一个数字" name="evenQigua2"
+												onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '请输入一个数字')" maxlength="18"/>
+											</div>
+										</div>
+										<div align="center" style="margin-top:20px">
+											<p>起卦原理：</p>
+											<p>1.上卦数字之和÷8，余数取上卦；</p>
+											<p>2.下卦数字之和÷8，余数取下卦；</p>
+											<p>3.全数之和÷6，余数取动爻。</p>
+										</div>
+                                    </script>
+                                    <script class="lyqigua-template-5" type="text/template">
+                                        <div class="lyqigua-item-5 time-qigua">
+										<input id="timeSingular" type="hidden" name="singularQigua" value="5"/>
+											<input type="hidden" name="liuyaoQiguaType" value="5" />
+											<!--
+											<div style="font-size:16px;text-align:center;">			
+												<input style="margin-bottom: 3px;" name="yinyang" type="radio"  checked="" value="0" >
+												<span>按公历时间起卦</span>
+												<input style="margin-bottom: 3px;margin-left: 30px;" name="yinyang" type="radio" value="1"  style="margin-left:23px;" >
+												<span>按农历时间起卦</span>
+											</div>
+											-->
+										</div>
+										<div align="center" style="margin-top:20px">
+											<p>起卦原理：</p>
+											<p>1.（年支数+月数+日数）÷8，得余数，取为上卦；</p>
+											<p>2.（年支数+月数+日数+时支数）÷8，得余数，取为下卦；</p>
+											<p>3.（年支数+月数+日数+时支数）÷6，得余数，取为动爻；</p>
+										</div>
+                                    </script>
+                                    <script class="lyqigua-template-6" type="text/template">
+                                        <div class="lyqigua-item-6 automated-qigua">
+										<input id="liuyaoQiguaType" type="hidden" name="liuyaoQiguaType" value="6"/>
+											<input type="hidden" name="singularQigua" value="6" />
+											<input type="hidden" id="Y1" name="Y1" value=""/>
+											<input type="hidden" id="Y2" name="Y2" value=""/>
+											<input type="hidden" id="Y3" name="Y3" value=""/>
+											<input type="hidden" id="Y4" name="Y4" value=""/>
+											<input type="hidden" id="Y5" name="Y5" value=""/>
+											<input type="hidden" id="Y6" name="Y6" value=""/>
+										</div>
+										<div align="center" style="margin-top:20px">
+											<p>近几年新出的求卦方式，使用不当未必能准确反应测算者心意，善用者用之。</p>
+										</div>
+                                    </script>
+									<script class="lyqigua-template-7" type="text/template">
+										<div class="lyqiguaqwe">
+											<input type="hidden" name="liuyaoQiguaType" value="9" />
+											<div>
+												<input id="hanzi"; class="danshuInput" type="text" placeholder="请输入2-10位汉字" name="hanziQigua"
+													   onfocus="hiddenPlaceholder(this)" onblur="showPlaceholder(this, '请输入一个数字')" />
+											</div>
+										</div>
+									</script>
+									<script class="lyqigua-template-8" type="text/template">
+										<input type="hidden" name="liuyaoQiguaType" value="8" />
+										<div align="center">
+											<div style="display:inline-block">本卦</div>
+											<div onclick="openGua(true)" style="display:inline-block">
+												<input name="zhuguaCode" id="zhuguaCode"  type="hidden">
+												<input placeholder="请选择" style="padding-left:5px;cursor:pointer;background-color:#FfFfFf;height:30px;width:80px;border:0.5px solid #ccc"  disabled="disabled" id="benGua" class="" size="1">
+											</div>
+											<div style="margin-left:30px;display:inline-block">变卦</div>
+											<div onclick="openGua(false)" style="display:inline-block">
+												<input name="bianguaCode" id="bianguaCode" type="hidden">
+												<input placeholder="请选择" style="padding-left:5px;cursor:pointer;background-color:#FfFfFf;height:30px;width:80px;border:0.5px solid #ccc"  disabled="disabled" id="bianGua" class="" size="1">
+											</div>
+										</div>
+									</script>
+                                    <script type="text/javascript">selectQiguaType();</script>
+                                </div>
+                            </div>
+                        </div>
+						<div class="after-clear"></div>
+                        <div  class="form-bottom">
+                            <div class="button-wrapper">
+								<input id="qiguaButton1" style="border-radius: 4px;display:none" class="paipan-butto1" type="button" value="开始起卦" onclick="qigua();"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<script>
+        layui.use('layer');
+        var isSavePaipan = false;    //是否是点击保存排盘弹起的登录框  默认不是
+		function qigua(){
+			if(validateForm()){
+                var url = "/paipan/qigua/6/8.html";
+                url += "?showType=" + "111";
+                var serializeObj = {};
+                var formDataJson = $("#ly-input-form").serializeArray();  //表单数据化
+
+                var str = $("#ly-input-form").serialize();                   //表单序列化
+
+                //表单转换为json数据
+                $(formDataJson).each(function () {
+                    if (serializeObj[this.name]) {
+                        if ($.isArray(serializeObj[this.name])) {
+                            serializeObj[this.name].push(this.value);
+                        } else {
+                            serializeObj[this.name] = [serializeObj[this.name], this.value];
+                        }
+                    } else {
+                        serializeObj[this.name] = this.value;
+                    }
+                });
+                //表单如果有时间参数 则将时间参数转化为时间戳
+                if (serializeObj["qiguaTime"]) {
+                    var timeStr = serializeObj["qiguaTime"];
+                    timeStr = timeStr.replace(/-/g, "/");
+                    var timestamp = Date.parse(timeStr);
+                    serializeObj["qiguaTime"] = timestamp;
+                }
+                //表单json数据参数化
+
+                var formSrt = $.param(serializeObj);
+                url += "&" + formSrt;
+                window.location.href = url;
+			}
+					
+		}
+
+		var isZhuGua;
+		var html;
+        var html2;
+        $(document).ready(function () {
+            html = '<div class="gua-layer" style="display:flex;justify-content: space-around;align-items: center;">';
+            var htmls = '';
+            $.each(divineNameData.slice(0, 4), function (index, item1) {
+                htmls += '<div>\n' +
+                    '\t\t<div align="center">' + item1.gongName + '</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[0].value + ','+item1.gongValue[0].id+')" id="gua' + item1.gongValue[0].id + '">' + item1.gongValue[0].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[1].value + ','+item1.gongValue[1].id+')" id="gua' + item1.gongValue[1].id + '">' + item1.gongValue[1].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[2].value + ','+item1.gongValue[2].id+')" id="gua' + item1.gongValue[2].id + '">' + item1.gongValue[2].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[3].value + ','+item1.gongValue[3].id+')" id="gua' + item1.gongValue[3].id + '">' + item1.gongValue[3].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[4].value + ','+item1.gongValue[4].id+')" id="gua' + item1.gongValue[4].id + '">' + item1.gongValue[4].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[5].value + ','+item1.gongValue[5].id+')" id="gua' + item1.gongValue[5].id + '">' + item1.gongValue[5].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[6].value + ','+item1.gongValue[6].id+')" id="gua' + item1.gongValue[6].id + '">' + item1.gongValue[6].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[7].value + ','+item1.gongValue[7].id+')" id="gua' + item1.gongValue[7].id + '">' + item1.gongValue[7].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t</div>'
+            });
+            html += htmls + '</div>';
+
+            html2 = '<div class="gua-layer" style="display:flex;justify-content: space-around;align-items: center;">';
+            var html3 = '';
+            $.each(divineNameData.slice(4, 8), function (index, item1) {
+                html3 += '<div>\n' +
+                    '\t\t<div align="center">' + item1.gongName + '</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[0].value + ','+item1.gongValue[0].id+')" id="gua' + item1.gongValue[0].id + '">' + item1.gongValue[0].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[1].value + ','+item1.gongValue[1].id+')" id="gua' + item1.gongValue[1].id + '">' + item1.gongValue[1].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[2].value + ','+item1.gongValue[2].id+')" id="gua' + item1.gongValue[2].id + '">' + item1.gongValue[2].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[3].value + ','+item1.gongValue[3].id+')" id="gua' + item1.gongValue[3].id + '">' + item1.gongValue[3].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[4].value + ','+item1.gongValue[4].id+')" id="gua' + item1.gongValue[4].id + '">' + item1.gongValue[4].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[5].value + ','+item1.gongValue[5].id+')" id="gua' + item1.gongValue[5].id + '">' + item1.gongValue[5].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t\t<div style="">\n' +
+                    '\t\t\t<span onclick="selectGua(' + item1.gongValue[6].value + ','+item1.gongValue[6].id+')" id="gua' + item1.gongValue[6].id + '">' + item1.gongValue[6].name + '</span>\n' +
+                    '\t\t\t<span onclick="selectGua('+ item1.gongValue[7].value +','+item1.gongValue[7].id+')" id="gua' + item1.gongValue[7].id + '">' + item1.gongValue[7].name + '</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t</div>'
+            });
+            html2 += html3 + '</div>'
+        });
+
+		function openGua(isZhuGuas) {
+		    isZhuGua = isZhuGuas;
+
+            layer.open({
+                area: ['80%','700px'],
+                type: 1,
+                title: '请选择',
+                content:html+html2
+            });
+        }
+
+        // 变卦数据
+        const divineNameData = [
+            {
+                "gongName": "乾宫",
+                "gongValue": [
+                    {name: "乾为天", value: '9111111',id:'1'},
+                    {name: "天风姤", value: '9111110',id:'2'},
+                    {name: "天山遁", value: '9111100',id:'3'},
+                    {name: "天地否", value: '9111000',id:'4'},
+                    {name: "风地观", value: '9110000',id:'5'},
+                    {name: "山地剥", value: '9100000',id:'6'},
+                    {name: "火地晋", value: '9101000',id:'7'},
+                    {name: "火天大有", value: '9101111',id:'8'}
+                ]
+            },
+            {
+                "gongName": "兑宫",
+                "gongValue": [
+                    {name: "兑为泽", value: '9011011',id:'9'},
+                    {name: "泽水困", value: '9011010',id:'10'},
+                    {name: "泽地萃", value: '9011000',id:'11'},
+                    {name: "泽山咸", value: '9011100',id:'12'},
+                    {name: "水山蹇", value: '9010100',id:'13'},
+                    {name: "地山谦", value: '9000100',id:'14'},
+                    {name: "雷山小过", value: '9001100',id:'15'},
+                    {name: "雷泽归妹", value: '9001011',id:'16'}
+                ]
+            },
+            {
+                "gongName": "离宫",
+                "gongValue": [
+                    {name: "离为火", value: '9101101',id:'17'},
+                    {name: "火山旅", value: '9101100',id:'18'},
+                    {name: "火风鼎", value: '9101110',id:'19'},
+                    {name: "火水未济", value: '9101010',id:'20'},
+                    {name: "山水蒙", value: '9100010',id:'21'},
+                    {name: "风水涣", value: '9110010',id:'22'},
+                    {name: "天水讼", value: '9111010',id:'23'},
+                    {name: "天火同人", value: '9111101',id:'24'}
+                ]
+            },
+            {
+                "gongName": "震宫",
+                "gongValue": [
+                    {name: "震为雷", value: '9001001',id:'25'},
+                    {name: "雷地豫", value: '9001000',id:'26'},
+                    {name: "雷水解", value: '9001010',id:'27'},
+                    {name: "雷风恒", value: '9001110',id:'28'},
+                    {name: "地风升", value: '9000110',id:'29'},
+                    {name: "水风井", value: '9010110',id:'30'},
+                    {name: "泽风大过", value: '9011110',id:'31'},
+                    {name: "泽雷随", value: '9011001',id:'32'}
+                ]
+            },
+            {
+                "gongName": "巽宫",
+                "gongValue": [
+                    {name: "巽为风", value: '9110110',id:'33'},
+                    {name: "风天小畜", value: '9110111',id:'34'},
+                    {name: "风火家人", value: '9110101',id:'35'},
+                    {name: "风雷益", value: '9110001',id:'36'},
+                    {name: "天雷无妄", value: '9111001',id:'37'},
+                    {name: "火雷噬嗑", value: '9101001',id:'38'},
+                    {name: "山雷颐", value: '9100001',id:'39'},
+                    {name: "山风蛊", value: '9100110',id:'40'}
+                ]
+            },
+            {
+                "gongName": "坎宫",
+                "gongValue": [
+                    {name: "坎为水", value: '9010010',id:'41'},
+                    {name: "水泽节", value: '9010011',id:'42'},
+                    {name: "水雷屯", value: '9010001',id:'43'},
+                    {name: "水火既济", value: '9010101',id:'44'},
+                    {name: "泽火革", value: '9011101',id:'45'},
+                    {name: "雷火丰", value: '9001101',id:'46'},
+                    {name: "地火明夷", value: '9000101',id:'47'},
+                    {name: "地水师", value: '9000010',id:'48'}
+                ]
+            },
+            {
+                "gongName": "艮宫",
+                "gongValue": [
+                    {name: "艮为山", value: '9100100',id:'49'},
+                    {name: "山火贲", value: '9100101',id:'50'},
+                    {name: "山天大畜", value: '9100111',id:'51'},
+                    {name: "山泽损", value: '9100011',id:'52'},
+                    {name: "火泽睽", value: '9101011',id:'53'},
+                    {name: "天泽履", value: '9111011',id:'54'},
+                    {name: "风泽中孚", value: '9110011',id:'55'},
+                    {name: "风山渐", value: '9110100',id:'56'}
+                ]
+            },
+            {
+                "gongName": "坤宫",
+                "gongValue": [
+                    {name: "坤为地", value: '9000000',id:'47'},
+                    {name: "地雷复", value: '9000001',id:'48'},
+                    {name: "地泽临", value: '9000011',id:'49'},
+                    {name: "地天泰", value: '9000111',id:'60'},
+                    {name: "雷天大壮", value: '9001111',id:'61'},
+                    {name: "泽天夬", value: '9011111',id:'62'},
+                    {name: "水天需", value: '9010111',id:'63'},
+                    {name: "水地比", value: '9010000',id:'64'}
+                ]
+            }
+        ];
+
+		function selectGua(value,id) {
+			if (isZhuGua){
+                document.getElementById("benGua").value = document.getElementById("gua"+id).innerHTML;
+                document.getElementById("zhuguaCode").value = value.toString().substring(1,7);
+			}else{
+                document.getElementById("bianGua").value = document.getElementById("gua"+id).innerHTML;
+                document.getElementById("bianguaCode").value = value.toString().substring(1,7);
+			}
+            layer.closeAll();
+        }
+
+	</script>
+<style>
+	.layui-layer{
+		top:30px !important;
+	}
+	.gua-layer span{
+		background-color:#F5F6F7;padding:5px;
+		margin:5px;
+		width:70px;
+		display:inline-block;
+		text-align:center;
+		cursor:pointer;
+	}
+	.gua-content{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+</style>            </div>
+            <div style="background-color:white;margin-top:20px;margin-bottom:20px">
+                <h2 class="titleh2">排盘须知</h2>
+                <div class="line"></div>
+                <div style="padding: 20px 60px 20px 60px;">
+                    <div style="padding:10px;" align="left">
+                        1、<span style="color:#666;line-height: 20px;">周易六十四卦，每一卦有六爻，通过分析六爻之间的生克关系，来判断所求测之事的吉凶，称为六爻预测。</span>
+                        </br>
+                        </br>
+                        2、<span style="color:#666;line-height: 20px;">公历即是阳历，农历即是阴历。请按日期类型选择起卦的时间是阳历还是阴历。六爻起卦，最好用三枚铜钱自己摇卦，然后手工指定卦象，最为准确。电脑摇卦次之。自动起卦最次之。</span>
+                        </br>
+                        </br>
+                        3、<span style="color:#666;line-height: 20px;">若电脑摇卦，请静心默想所测之事一分钟，然后专心摇卦六次，得出卦象，可贴到各算命论坛求测。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <div id="footer">
+            <div id="footer-nav" style="margin-bottom: 20px">
+                <br>
+                <p style="color: #999999;text-align:center; font-size: 14px;line-height: 23px;">
+                    <a href="https://beian.miit.gov.cn/" target="_blank" style="color: #999999;font-size:14px">
+                        <br>
+                        备案/许可证编号为：蜀ICP备17025946号-2
+                    </a>
+                    <br>
+                </p>
+            </div>
+        </div>
+</body>
+<style>
+    a {
+        text-decoration: none;
+        color: #4F4F4F;
+        font-size: 16px;
+    }
+</style>
